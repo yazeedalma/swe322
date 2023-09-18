@@ -1,0 +1,80 @@
+<?php
+
+
+
+$classmates = array("DemoName1", "DemoName2", "DemoName3", "DemoName4", "DemoName5", "DemoName6"); 
+
+
+$course = array("CC001"=>"DemoCourse1", "CC002"=>"DemoCourse2", "CC003"=>"DemoCourse3", "CC004"=>"DemoCourse4", "CC005"=>"DemoCourse5", "CC006"=>"DemoCourse6");
+
+
+
+$device = array (
+  array("Laptop","Asus","MSI"),
+  array("CPU","AMD","Intel"),
+  array("GPU","AMD","Nvidia")
+);
+
+?>
+
+<!-- HTML AND CSS  --->
+
+<html>
+<head>
+	<title>PHP Basics</title>
+	<style>
+			
+			body {background-color: yellow;} 
+	</style>
+</head>
+<body>
+
+<!-- Answer For the Part - 1 - Indexed Array    -->
+	<div>
+		<h1> Class Mates Names </h1><br>
+		<?php    
+
+			/* Finding the length of array classmates  */
+			$length = count($classmates);
+
+			/* Using the for loop to print the names of classmates  */
+			for($i = 0; $i < $length; $i++) 
+			{
+  			echo $classmates[$i];
+  			echo "<br>";
+  			}
+
+		?>
+	</div>
+	<hr>
+
+<!-- Answer For the Part - 2 - Associative Array    -->
+	<div>
+		<h1> Course code and Course Names of the courses finished. </h1><br>
+		<?php    
+
+			/* Using the for each loop to print the course code and course name   */
+			foreach($course as $i => $i_value) {
+  				echo "Course Code (key) = " . $i . ", Course Name (value) = " . $i_value;
+  				echo "<br>";
+			}
+  			
+		?>
+	</div>
+	<hr>
+
+<!-- Answer For the Part - 3 - Multidimensional Array   -->
+	<div>
+		<h1> Printing values from a Multidimensional Array </h1><br>
+		<?php    
+
+			/* Printing the Values of a Multidimensional Array    */
+
+			echo '"I am looking for for '.$device[0][1].' '.$device[0][0].' with '.$device[1][1].' '.$device[1][0].' and '.$device[2][2].' '.$device[2][0].'".';
+  			
+		?>
+	</div>
+	<hr>
+
+</body>
+</html>
