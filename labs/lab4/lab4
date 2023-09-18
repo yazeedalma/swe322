@@ -1,0 +1,83 @@
+<?php
+
+
+$classmates = array("Yazeed", "khaled", "saleh", "waleed", "sara", "osama"); 
+
+
+
+$course = array("CC001"=>"Yazeed", "CC002"=>"khaled", "CC003"=>"saleh", "CC004"=>"waleed", "CC005"=>"sara", "CC006"=>"osama");
+
+
+$device = array (
+  array("Laptop","Asus","MSI"),
+  array("CPU","AMD","Intel"),
+  array("GPU","AMD","Nvidia")
+);
+
+?>
+
+
+
+<html>
+<head>
+	<title>PHP Basics</title>
+	<style>
+			/*   CSS  */
+			body {background-color: yellow;} 
+	</style>
+</head>
+<body>
+
+
+	<div>
+		<h1> Class Mates Names </h1><br>
+		<?php    
+
+		
+			$length = count($classmates);
+
+		
+			for($i = 0; $i < $length; $i++) 
+			{
+  			echo $classmates[$i];
+  			echo "<br>";
+  			}
+
+		?>
+	</div>
+	<hr>
+
+
+	<div>
+		<table>
+  <tr>
+    <th>Course Code</th>
+    <th>Course Name</th>
+  </tr>
+  <?php
+  foreach ($course as $code => $name) {
+    echo "<tr>";
+    echo "<td>" . $code . "</td>";
+    echo "<td>" . $name . "</td>";
+    echo "</tr>";
+  }
+  ?>
+</table>
+	</div>
+	<hr>
+
+
+	<div>
+		<h1> Printing values from a Multidimensional Array </h1><br>
+		<?php    
+
+			
+
+			echo '"I am looking for for '.$device[0][1].' '.$device[0][0].' with '.$device[1][1].' '.$device[1][0].' and '.$device[2][2].' '.$device[2][0].'".';
+  			
+		?>
+	</div>
+	<hr>
+
+</body>
+</html>
