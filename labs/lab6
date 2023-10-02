@@ -1,0 +1,100 @@
+<?php
+
+class Courses
+{
+    public $courseCode;
+    public $courseName;
+    public $courseDescription;
+    public $grade;
+
+    public function setCourseCode($code)
+    {
+        $this->courseCode = $code;
+    }
+
+    public function getCourseCode()
+    {
+        return $this->courseCode;
+    }
+
+    public function setCourseName($name)
+    {
+        $this->courseName = $name;
+    }
+
+    public function getCourseName()
+    {
+        return $this->courseName;
+    }
+
+    public function setCourseDescription($description)
+    {
+        $this->courseDescription = $description;
+    }
+
+    public function getCourseDescription()
+    {
+        return $this->courseDescription;
+    }
+
+    public function setGrade($grade)
+    {
+        $this->grade = $grade;
+    }
+
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    public function isAPlusGrade()
+    {
+        return $this->grade === 'A+';
+    }
+
+    public function getCourseDetails()
+    {
+        return [
+            'Course Code' => $this->courseCode,
+            'Course Name' => $this->courseName,
+            'Course Description' => $this->courseDescription,
+            'Grade' => $this->grade
+        ];
+    }
+}
+
+
+$course1 = new Courses();
+$course1->setCourseCode('CSE101');
+$course1->setCourseName('Introduction to Computer Science');
+$course1->setCourseDescription('An introductory course on computer science fundamentals.');
+$course1->setGrade('A+');
+
+$course2 = new Courses();
+$course2->setCourseCode('MAT202');
+$course2->setCourseName('Linear Algebra');
+$course2->setCourseDescription('A course on linear algebra and matrix operations.');
+$course2->setGrade('A');
+
+$course3 = new Courses();
+$course3->setCourseCode('ENG301');
+$course3->setCourseName('Advanced English Writing');
+$course3->setCourseDescription('A course focusing on advanced writing skills in English.');
+$course3->setGrade('A+');
+
+
+$coursesArray = [$course1, $course2, $course3];
+
+
+echo '<table>';
+echo '<tr><th>Course Code</th><th>Course Name</th><th>Course Description</th><th>Grade</th></tr>';
+foreach ($coursesArray as $course) {
+    echo '<tr' . ($course->isAPlusGrade() ? ' style="background-color: yellow;"' : '') . '>';
+    echo '<td>' . $course->getCourseCode() . '</td>';
+    echo '<td>' . $course->getCourseName() . '</td>';
+    echo '<td>' . $course->getCourseDescription() . '</td>';
+    echo '<td>' . $course->getGrade() . '</td>';
+    echo '</tr>';
+}
+echo '</table>';
+?>
